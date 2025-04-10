@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block title %} Registrar Conta {% endblock %} {%
+block content %}
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card shadow-sm p-4" style="width: 100%; max-width: 400px">
+    <form method="POST" class="form-signin">
+      {{ form.hidden_tag() }}
+      <h1 class="h4 mb-4 text-center font-weight-bold">Criar Conta</h1>
+
+      <div class="form-group">
+        {{ form.username.label(class="font-weight-bold") }} {{
+        form.username(class="form-control", placeholder="Nome") }}
+      </div>
+
+      <div class="form-group">
+        {{ form.email_address.label(class="font-weight-bold") }} {{
+        form.email_address(class="form-control", placeholder="Email") }}
+      </div>
+
+      <div class="form-group">
+        {{ form.password.label(class="font-weight-bold") }} {{
+        form.password(class="form-control", placeholder="Senha") }}
+      </div>
+
+      <div class="form-group">
+        {{ form.confirm_password.label(class="font-weight-bold") }} {{
+        form.confirm_password(class="form-control", placeholder="Confirmar
+        Senha") }}
+      </div>
+
+      {{ form.submit(class="btn btn-primary btn-block btn-lg") }}
+
+      <hr class="my-4" />
+
+      <div class="text-center">
+        <p class="mb-2">Já tem uma conta?</p>
+        <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('customer_signin_page') }}">Login</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
